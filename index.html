@@ -89,10 +89,11 @@
             
             <!-- Add this video container -->
             <div class="video-result">
-                <video id="result-video" autoplay loop muted playsinline>
+                <video id="result-video" autoplay loop muted playsinline controls preload="auto">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <div id="video-error" style="display: none; color: red; text-align: center; margin-top: 10px;"></div>
             </div>
 
             <div id="results-container"></div>

@@ -79,26 +79,26 @@ function App() {
     let resultMessage = '';
 
     if (score >= 0 && score <= 20) {
-        videoSrc = 'assets/vedios/1.mp4';
+        videoSrc = './assets/vedios/1.mp4';
         resultMessage = 'Complete Strangers 😱';
     } else if (score > 20 && score <= 40) {
-        videoSrc = 'assets/vedios/2.mp4';
+        videoSrc = './assets/vedios/2.mp4';
         resultMessage = 'Barely Acquaintances 😅';
     } else if (score > 40 && score <= 60) {
-        videoSrc = 'assets/vedios3.mp4';
+        videoSrc = './assets/vedios/3.mp4';
         resultMessage = 'Casual Friends 🙂';
     } else if (score > 60 && score <= 75) {
-        videoSrc = 'assets/vedios4.mp4';
+        videoSrc = './assets/vedios/4.mp4';
         resultMessage = 'Good Friends 😊';
     } else if (score > 75 && score <= 85) {
-        videoSrc = 'assets/vedios5.mp4';
+        videoSrc = './assets/vedios/5.mp4';
         resultMessage = 'Best Friends 🤗';
     } else if (score > 85 && score <= 95) {
-        videoSrc = 'assets/vedios6.mp4';
+        videoSrc = './assets/vedios/6.mp4';
         resultMessage = 'Soul Friends 💫';
     } else {
         // score > 95
-        videoSrc = 'assets/video7.mp4';
+        videoSrc = './assets/vedios/7.mp4';
         resultMessage = 'Telepathic Connection 🔮';
     }
 

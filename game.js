@@ -113,25 +113,25 @@ function showResults() {
     
     // Set video source and message based on score
     if (score >= 0 && score <= 20) {
-        videoElement.src = 'assets/video1.mp4';
+        videoElement.src = 'assets/vedios/1.mp4';
         resultMessage.textContent = 'Complete Strangers 😱';
     } else if (score > 20 && score <= 40) {
-        videoElement.src = 'assets/video2.mp4';
+        videoElement.src = 'assets/vedios/2.mp4';
         resultMessage.textContent = 'Barely Acquaintances 😅';
     } else if (score > 40 && score <= 60) {
-        videoElement.src = 'assets/video3.mp4';
+        videoElement.src = 'assets/vedios/3.mp4';
         resultMessage.textContent = 'Casual Friends 🙂';
     } else if (score > 60 && score <= 75) {
-        videoElement.src = 'assets/video4.mp4';
+        videoElement.src = 'assets/vedios/4.mp4';
         resultMessage.textContent = 'Good Friends 😊';
     } else if (score > 75 && score <= 85) {
-        videoElement.src = 'assets/video5.mp4';
+        videoElement.src = 'assets/vedios/5.mp4';
         resultMessage.textContent = 'Best Friends 🤗';
     } else if (score > 85 && score <= 95) {
-        videoElement.src = 'assets/video6.mp4';
+        videoElement.src = 'assets/vedios/6.mp4';
         resultMessage.textContent = 'Soul Friends 💫';
     } else {
-        videoElement.src = 'assets/video7.mp4';
+        videoElement.src = 'assets/vedios/7.mp4';
         resultMessage.textContent = 'Telepathic Connection 🔮';
     }
 

@@ -369,10 +369,21 @@ h2 {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #000;
 }
 
 #result-video {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+#result-message {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
 } 
