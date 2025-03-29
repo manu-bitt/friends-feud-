@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Feud - Friendship Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <header>
+                <h1>Friends Feud</h1>
+                <p class="subtitle">The Ultimate Friendship Test</p>
+            </header>
+
+            <div class="intro-container">
+                <div class="how-to-play">
+                    <h2>How to Play</h2>
+                    <div class="steps">
+                        <p>1. Enter both player names</p>
+                        <p>2. Each player answers 10 questions</p>
+                        <p>3. Match answers to score points!</p>
+                    </div>
+                </div>
+
+                <div class="rules">
+                    <h2>Quick Rules</h2>
+                    <p>• No peeking at each other's answers</p>
+                    <p>• Answer honestly for best results</p>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <button onclick="startQuiz()">Start Friends Feud</button>
+            </div>
+        </section>
+
+        <!-- Name Input Screen -->
+        <section id="name-screen" class="screen">
+            <header>
+                <h2>Enter Names</h2>
+            </header>
+            <div class="input-container">
+                <input type="text" id="player1" placeholder="First Player Name">
+                <input type="text" id="player2" placeholder="Second Player Name">
+                <button onclick="startGame()">Continue</button>
+            </div>
+        </section>
+
+        <!-- Add this new transition screen between players -->
+        <section id="transition-screen" class="screen">
+            <div class="transition-content">
+                <div class="player-switch">
+                    <h2>Great job, <span id="player1-name-display"></span>! 🎉</h2>
+                    <div class="switch-animation">
+                        <div class="arrow">→</div>
+                    </div>
+                    <p>Now it's <span id="player2-name-display"></span>'s turn!</p>
+                </div>
+                <button onclick="startPlayer2Round()" class="switch-button">Ready to Play</button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="player-info">
+                    <h2 id="current-player"></h2>
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <p class="question-counter">Question <span id="question-number">1</span>/10</p>
+                </div>
+            </div>
+            <div class="quiz-content">
+                <h3 id="question-text"></h3>
+                <div id="options-container" class="options-container"></div>
+                <button onclick="nextQuestion()" id="next-btn">Next Question</button>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen">
+            <header>
+                <h2>Your Results</h2>
+            </header>
+            
+            <!-- Add this video container -->
+            <div class="video-result">
+                <video id="result-video" autoplay loop muted playsinline>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div id="results-container"></div>
+            <div class="score-container">
+                <h3 id="final-score"></h3>
+                <div id="result-message"></div>
+                <button onclick="playAgain()">Play Again</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="game.js"></script>
+</body>
+</html> 

@@ -1,0 +1,378 @@
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+    --text-color: #1d1d1f;
+    --border-radius: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.screen {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.input-container, .quiz-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #eee;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.options-container {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.option {
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    border-color: var(--primary-color);
+}
+
+.option.selected {
+    background: var(--primary-color);
+    color: white;
+}
+
+.section {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.player-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.result-item {
+    padding: 1.5rem;
+    border: 2px solid #eaeaea;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.result-item.matched {
+    background-color: #f8f8f8;
+    border-color: var(--primary-color);
+}
+
+.score-summary {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 2rem auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 2rem;
+    }
+
+    .choice-button {
+        padding: 1rem;
+    }
+}
+
+.progress-bar {
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.cta-button {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.intro-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.how-to-play, .rules {
+    margin-bottom: 2rem;
+}
+
+.steps p, .rules p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateX(10px);
+}
+
+.step-number {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.rules-list, .fun-facts ul {
+    list-style: none;
+}
+
+.rules-list li, .fun-facts li {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: #f8f8f8;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.rules-list li:hover, .fun-facts li:hover {
+    transform: translateY(-2px);
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.start-button {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(45deg, var(--primary-color), #333);
+}
+
+.start-button:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.transition-content {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.player-switch {
+    margin: 2rem 0;
+}
+
+.switch-animation {
+    margin: 2rem 0;
+    font-size: 3rem;
+}
+
+.arrow {
+    display: inline-block;
+    animation: slideRight 1.5s infinite;
+}
+
+.player-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.question-counter {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.switch-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.switch-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}
+
+.result-video-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.result-video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.result-message {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.result-message h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.score-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.match-text {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.video-result {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#result-video {
+    width: 100%;
+    height: auto;
+    display: block;
+} 
